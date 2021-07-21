@@ -1,10 +1,12 @@
 from django.contrib import admin
+import decimal
 from .models import Position, Level, OtherInformation, Chief, Employer
 
 # Register your models here.
 
-def delete_admin():
-    pass
+def clear_salary(modeladmin, request, queryset):
+    queryset.update(paid_salary=decimal.Decimal('0'))
+clear_salary.short_description = "Очистить зарплату"
 
 @admin.register(Position)
 class PositionAdmin(admin.ModelAdmin):
@@ -29,6 +31,7 @@ class EmployerAdmin(admin.ModelAdmin):
     list_display = ["full_name", "position", "level", "chief", "salary", "paid_salary"]
     list_display_links = ["chief"]
     list_filter = ["level", "position"]
+    actions = [clear_salary,]
 
 
 
