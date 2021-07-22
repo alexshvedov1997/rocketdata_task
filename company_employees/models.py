@@ -12,6 +12,7 @@ class Position(models.Model):
 
 class Level(models.Model):
     level_title = models.CharField(max_length=250, unique=True, blank=False, verbose_name="Уровень")
+    slug = models.SlugField(max_length=250, default="Junior")
 
     def __str__(self):
         return "{}".format(self.level_title)

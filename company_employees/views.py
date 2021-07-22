@@ -9,3 +9,12 @@ class EmployerListView(generics.ListAPIView):
     serializer_class = EmployerListSerializer
     queryset = Employer.objects.all()
 
+
+class EmployerLevelListView(generics.ListAPIView):
+    serializer_class = EmployerListSerializer
+
+    def get_queryset(self):
+        slug_lvl = self.kwargs['slug_level']
+        return Employer.objects.filter(level__slug=slug_lvl)
+
+

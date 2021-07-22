@@ -14,7 +14,8 @@ class PositionAdmin(admin.ModelAdmin):
 
 @admin.register(Level)
 class LevelAdmin(admin.ModelAdmin):
-    list_display = ["level_title"]
+    list_display = ["level_title", "slug"]
+    prepopulated_fields = {"slug": ("level_title",)}
 
 
 @admin.register(OtherInformation)
