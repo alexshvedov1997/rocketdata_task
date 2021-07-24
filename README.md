@@ -1,6 +1,6 @@
 # Rocketdata test
 
-###Технические требования
+### Технические требования
 * Python 3.8.10
 * django 3.2.5
 * django-seed 0.2.2
@@ -22,8 +22,8 @@
 >2.1 Заполните базу данных при помощи:  
 • DB seeder для Django ORM  
 • При помощи скрипта.
->> В company_employees/managment/commands былп добавлена команда 
->> при вводе в terminal **python3 manage.py fill_db**. Будет добавлено 
+>> В company_employees/managment/commands была добавлена команда  
+>> При вводе в terminal **python3 manage.py fill_db**, будет добавлено 
 >> 10 записей в таблицу Other informations
 
 >2.3 Пользователи могут получать доступ к API при помощи специального ключа.
