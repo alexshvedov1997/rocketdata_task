@@ -20,3 +20,8 @@ class EmployerLevelListView(generics.ListAPIView):
         return Employer.objects.filter(level__slug=slug_lvl)
 
 
+class EmployerDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = EmployerListSerializer
+    queryset = Employer.objects.all()
+
+

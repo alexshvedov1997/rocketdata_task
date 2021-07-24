@@ -4,7 +4,8 @@ from .views import *
 app_name = 'employer'
 
 urlpatterns = [
-    path( "list_employer/", EmployerListView.as_view(), name="empl_rest_lst"),
-    path("list_level/<slug:slug_level>/", EmployerLevelListView.as_view(), name="empl_lvl_lst")
+    path("list_employer/", EmployerListView.as_view(), name="empl_rest_lst"),
+    path("list_level/<slug:slug_level>/", EmployerLevelListView.as_view(), name="empl_lvl_lst"),
+    path("detail_empl/<int:pk>/", EmployerDetailView.as_view(), name="detail_empl")
 ]
 
