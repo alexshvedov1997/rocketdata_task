@@ -8,10 +8,10 @@ class Command(BaseCommand):
     help = "Add 3 massage to OtherInformation"
 
     def handle(self, *args, **options):
-        print("Seed chekc work")
+        print("Seed check work")
 
         seeder = Seed.seeder()
-        seeder.add_entity(OtherInformation, 3,{
+        seeder.add_entity(OtherInformation, 10,{
             'age': lambda x: random.randint(18, 70),
             'telephone_number': lambda x: self.__create_telephone_number()
         })
